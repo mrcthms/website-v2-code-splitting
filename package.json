@@ -22,7 +22,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build-dev": "webpack --config webpack.dev.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js"
   },
   "dependencies": {
     "express": "^4.16.2",
