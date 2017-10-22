@@ -1,0 +1,4 @@
+{
+  "plugins": ["lmn"],
+  "extends": "plugin:lmn/default"
+}
