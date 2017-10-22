@@ -1,0 +1,14 @@
+{
+  "name": "splitting-code",
+  "version": "0.0.1",
+  "description": "Investigation into how to code split using Webpack",
+  "main": "index.js",
+  "author": "Marc Thomas",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  },
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  }
+}
