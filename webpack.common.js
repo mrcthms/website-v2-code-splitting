@@ -40,7 +40,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            presets: ['env', 'react'],
             plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
           },
         },
