@@ -6,4 +6,39 @@ const LoadableComponent = loadable({
   loading: () => <div>Loading heyyyy</div>,
 });
 
-export default () => <LoadableComponent />;
+const AsyncComponent = loadable({
+  loader: () => import('./Async2'),
+  loading: () => <div>Loading sdfsdfsdf</div>,
+});
+
+class Component extends React.Component {
+  state = {
+    show: false,
+  };
+
+  constructor(props) {
+    super(props);
+  }
+
+  handleClick = () => {
+    this.setState(() => ({
+      show: true,
+    }));
+  };
+
+  handleMouseOver = () => {
+    AsyncComponent.preload();
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick} onMouseOver={this.handleMouseOver}>Will I preload?</button>
+        <LoadableComponent />
+        {this.state.show && <AsyncComponent />}
+      </div>
+    );
+  }
+}
+
+export default Component;
