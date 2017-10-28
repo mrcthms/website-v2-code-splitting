@@ -8,8 +8,10 @@ async function getComponent() {
 
   element.innerHTML = _.join(['Yo', 'yo', 'yo', 'marc'], ' ');
   console.log('print', print);
-  print.default();
-  return element;
+  return print.default().then(result => {
+    element.innerHTML += '\n\n' + result;
+    return element;
+  });
 }
 
 getComponent().then(component => {

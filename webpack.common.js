@@ -12,6 +12,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management',
+      template: path.resolve(__dirname, 'index.html'),
     }),
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'common'
