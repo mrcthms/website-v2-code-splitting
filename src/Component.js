@@ -20,6 +20,15 @@ class Component extends React.Component {
     super(props);
   }
 
+  async componentDidMount() {
+    const join = await import(/* webpackChunkName: "lodash/join"*/ 'lodash/join');
+    /* eslint-disable react/no-did-mount-set-state */
+    this.setState(() => ({
+      joined: join(['This', 'is', 'being', 'joined', 'via', 'async', 'import'], ' 🏨 '),
+    }));
+    /* eslint-enable */
+  }
+
   handleClick = () => {
     this.setState(() => ({
       show: true,
@@ -36,6 +45,7 @@ class Component extends React.Component {
         <button onClick={this.handleClick} onMouseOver={this.handleMouseOver}>Will I preload?</button>
         <LoadableComponent />
         {this.state.show && <AsyncComponent />}
+        <h3>{this.state.joined}</h3>
       </div>
     );
   }

@@ -13,7 +13,7 @@ class Async2 extends React.Component {
     const join = await import(/* webpackChunkName: "lodash/join"*/ 'lodash/join');
     /* eslint-disable react/no-did-mount-set-state */
     this.setState(() => ({
-      joined: join(['this', 'is', 'all', 'lazy', 'loaded'], ' 💅 '),
+      joined: join(['This', 'is', 'also', 'lazy', 'loaded'], ' 💅 '),
     }));
     /* eslint-enable */
   }
