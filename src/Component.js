@@ -3,12 +3,12 @@ import loadable from 'react-loadable';
 
 const LoadableComponent = loadable({
   loader: () => import('./Async'),
-  loading: () => <div>Loading heyyyy</div>,
+  loading: () => <div>Loading Async</div>,
 });
 
 const AsyncComponent = loadable({
   loader: () => import('./Async2'),
-  loading: () => <div>Loading sdfsdfsdf</div>,
+  loading: () => <div>Loading Async2</div>,
 });
 
 class Component extends React.Component {

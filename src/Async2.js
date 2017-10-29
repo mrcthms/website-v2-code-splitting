@@ -1,6 +1,26 @@
 import React from 'react';
 
-export default () =>
-  <section>
-    <h1>This will also be async loaded, but on interaction!</h1>
-  </section>;
+class Async2 extends React.Component {
+  state = {
+    joined: null,
+  };
+
+  constructor(props) {
+    super(props);
+  }
+
+  async componentDidMount() {
+    const join = await import(/* webpackChunkName: "lodash/join"*/ 'lodash/join');
+    /* eslint-disable react/no-did-mount-set-state */
+    this.setState(() => ({
+      joined: join(['this', 'is', 'all', 'lazy', 'loaded'], ' 💅 '),
+    }));
+    /* eslint-enable */
+  }
+
+  render() {
+    return <section>{this.state.joined || 'Waiting to Join'}</section>;
+  }
+}
+
+export default Async2;

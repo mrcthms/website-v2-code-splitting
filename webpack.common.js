@@ -6,7 +6,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.js',
-    // print: './src/another.js'
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -14,9 +13,6 @@ module.exports = {
       title: 'Output Management',
       template: path.resolve(__dirname, 'index.html'),
     }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'common'
-    // })
   ],
   output: {
     filename: '[name].bundle.js',
